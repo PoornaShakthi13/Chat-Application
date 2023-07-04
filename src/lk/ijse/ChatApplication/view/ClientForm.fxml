@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="629.0" prefWidth="398.0" style="-fx-background-color: #8acaf2;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.ChatApplication.controller.ClientFormController">
+    <children>
+        <TextArea fx:id="txtArea" editable="false" layoutX="12.0" layoutY="94.0" opacity="0.65" prefHeight="467.0" prefWidth="374.0" style="-fx-background-color: #000000;">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font></TextArea>
+        <Rectangle arcHeight="5.0" arcWidth="5.0" height="87.0" layoutX="-2.0" layoutY="-4.0" strokeLineJoin="ROUND" strokeType="OUTSIDE" width="401.0">
+            <stroke>
+                <LinearGradient endX="1.0" endY="1.0">
+                    <stops>
+                        <Stop color="#0fd3c6" />
+                        <Stop color="WHITE" offset="1.0" />
+                    </stops>
+                </LinearGradient>
+            </stroke>
+            <fill>
+                <LinearGradient endX="1.0" endY="1.0">
+                    <stops>
+                        <Stop color="#0c63bf" />
+                        <Stop color="#046168" offset="0.6091954022988502" />
+                        <Stop color="#046168" offset="1.0" />
+                    </stops>
+                </LinearGradient>
+            </fill></Rectangle>
+        <Circle fill="#3bb261" layoutX="348.0" layoutY="42.0" radius="32.0" stroke="WHITE" strokeType="INSIDE" />
+        <FontAwesomeIconView fill="#61301f" glyphName="USER" layoutX="328.0" layoutY="58.0" size="50" />
+        <Label fx:id="lblClientName" layoutX="14.0" layoutY="25.0" text="Client" textFill="#f8f0f0">
+            <font>
+                <Font name="Berlin Sans FB" size="30.0" />
+            </font>
+        </Label>
+        <TextField fx:id="txtField" layoutX="14.0" layoutY="578.0" onKeyReleased="#enterKeyReleased" prefHeight="33.0" prefWidth="318.0" promptText="Message" style="-fx-background-radius: 25px; -fx-border-radius: 25px;">
+            <font>
+                <Font size="14.0" />
+            </font>
+            <opaqueInsets>
+                <Insets />
+            </opaqueInsets>
+            <padding>
+                <Insets left="40.0" right="40.0" />
+            </padding>
+        </TextField>
+        <JFXButton fx:id="btnSend" buttonType="RAISED" layoutX="340.0" layoutY="575.0" onAction="#sendBtnOnAction" prefHeight="40.0" prefWidth="40.0" ripplerFill="#3e78dd" style="-fx-background-color: #078fe3; -fx-background-radius: 50%; -fx-border-radius: 50%;" text=" ">
+            <graphic>
+                <FontAwesomeIconView fill="WHITE" glyphName="SEND" size="22" wrappingWidth="18.0" />
+            </graphic>
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor></JFXButton>
+        <FontAwesomeIconView fx:id="imgCamera" fill="#0a404d" glyphName="CAMERA" layoutX="303.0" layoutY="602.0" onMouseClicked="#cameraBtnClecked" size="20">
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor></FontAwesomeIconView>
+        <ImageView fx:id="imgEmoji" fitHeight="28.0" fitWidth="28.0" layoutX="20.0" layoutY="581.0" onMouseClicked="#emojiBtnClicked" pickOnBounds="true" smooth="false">
+            <image>
+                <Image url="../assest/smile-preview.png" />
+            </image>
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+        </ImageView>
+        <AnchorPane fx:id="mediaPane" layoutX="64.0" layoutY="472.0" prefHeight="103.0" prefWidth="250.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-background-radius: 10px; -fx-border-radius: 10px;">
+            <children>
+                <Circle fill="#4569b1" layoutX="126.0" layoutY="53.0" onMouseClicked="#photosMouseClicked" radius="39.0" stroke="#4569b1" strokeType="INSIDE">
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </Circle>
+                <Circle fill="#e42323" layoutX="209.0" layoutY="53.0" onMouseClicked="#cameraMouseClicked" radius="39.0" stroke="#e42323" strokeType="INSIDE">
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </Circle>
+                <Circle fill="#b788ce" layoutX="43.0" layoutY="53.0" onMouseClicked="#documentMouseClicked" radius="39.0" stroke="#b788ce" strokeType="INSIDE">
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </Circle>
+                <ImageView fitHeight="40.0" fitWidth="39.0" layoutX="24.0" layoutY="32.0" pickOnBounds="true" smooth="false">
+                    <image>
+                        <Image url="../assest/Files.png" />
+                    </image>
+                </ImageView>
+                <ImageView fitHeight="40.0" fitWidth="39.0" layoutX="106.0" layoutY="33.0" pickOnBounds="true" smooth="false">
+                    <image>
+                        <Image url="../assest/Photos.png" />
+                    </image>
+                </ImageView>
+                <ImageView fitHeight="40.0" fitWidth="39.0" layoutX="190.0" layoutY="33.0" pickOnBounds="true" smooth="false">
+                    <image>
+                        <Image url="../assest/Camera.png" />
+                    </image>
+                </ImageView>
+            </children>
+        </AnchorPane>
+        <ScrollPane fx:id="emojiPane" layoutX="34.0" layoutY="378.0" prefHeight="200.0" prefWidth="223.0">
+            <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0" />
+            </content>
+        </ScrollPane>
+        <Pane fx:id="imageViewPane" layoutX="97.0" layoutY="58.0" prefHeight="246.0" prefWidth="287.0" style="-fx-background-color: #ffffff;">
+            <children>
+                <ImageView fx:id="imgView" fitHeight="191.0" fitWidth="270.0" layoutX="9.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true" />
+                <JFXButton fx:id="btnSendImage" buttonType="RAISED" layoutX="57.0" layoutY="207.0" onAction="#sendImageBtnOnAction" prefHeight="25.0" prefWidth="54.0" style="-fx-background-color: #239a0b;" text="Send" textFill="WHITE" />
+                <JFXButton fx:id="btnCancelSendImg" buttonType="RAISED" layoutX="166.0" layoutY="207.0" onAction="#cancelSendImageBtnOnAction" prefHeight="25.0" prefWidth="54.0" style="-fx-background-color: #e73c3c;" text="Cancel" textFill="WHITE" />
+            </children>
+        </Pane>
+    </children>
+</AnchorPane>
