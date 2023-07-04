@@ -1,27 +1,21 @@
+/*
+ * @Created by: Abhishek Ashinsa
+ * @Date: 06/08/2022
+ * @Project: Chat-Room
+ * */
+
 package lk.ijse.ChatApplication.controller;
 
 import com.jfoenix.controls.JFXButton;
-import com.sun.javafx.scene.CameraHelper;
-import com.sun.javafx.sg.prism.NGNode;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
-import javafx.animation.Animation;
-import javafx.animation.KeyFrame;
-import javafx.animation.Timeline;
-import javafx.embed.swing.SwingFXUtils;
 import javafx.event.ActionEvent;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.geometry.Pos;
-import javafx.scene.Camera;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.image.WritableImage;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
@@ -29,24 +23,19 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
-import javafx.util.Duration;
-import lk.ijse.ChatApplication.util.ClientHandler;
-import org.controlsfx.control.Notifications;
+
+import java.awt.*;
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.io.File;
+import java.io.IOException;
+import java.net.Socket;
+import java.net.URL;
+import java.util.ResourceBundle;
+
 //import org.opencv.core.Core;
 //import org.opencv.core.Mat;
 //import org.opencv.videoio.VideoCapture;
-
-import java.awt.*;
-import java.awt.image.BufferedImage;
-import java.awt.image.DataBufferByte;
-import java.awt.image.WritableRaster;
-import java.io.*;
-import java.net.Socket;
-import java.net.URL;
-import java.time.LocalTime;
-import java.time.format.DateTimeFormatter;
-import java.util.ResourceBundle;
 
 public class ClientFormController implements Initializable {
     public TextArea txtArea;

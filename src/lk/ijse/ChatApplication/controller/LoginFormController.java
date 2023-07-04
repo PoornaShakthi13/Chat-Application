@@ -42,11 +42,9 @@ import java.util.ResourceBundle;
             startClient();
         }
 
+
         @Override
         public void initialize(URL location, ResourceBundle resources) {
-
-
-
             new Thread(() -> {
                 try {
                     serverSocket = new ServerSocket(2000);
@@ -66,14 +64,27 @@ import java.util.ResourceBundle;
             }
         }
 
-        public void startClient() throws IOException {
+        public void startClient()  {
             userName = txtUserName.getText();
 
-            Parent parent = FXMLLoader.load(getClass().getResource("../view/ClientForm.fxml"));
-            Stage stage = new Stage();
-            stage.setScene(new Scene(parent));
-            stage.setResizable(false);
-            stage.show();
+            Stage primaryStage= new Stage();
+
+            Parent parent = null;
+            try {
+                parent = FXMLLoader.load(getClass().getResource("../view/ClientForm.fxml"));
+
+                Stage stage = new Stage();
+                stage.setScene(new Scene(parent));
+                stage.setResizable(false);
+                stage.show();
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+
+//            primaryStage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../view/ClientForm.fxml"))));
+//            primaryStage.show();
 
             new Thread(() -> {
                 try {
@@ -99,7 +110,6 @@ import java.util.ResourceBundle;
                 }
 
             }).start();
-
-
+        }
     }
-}
+
